@@ -10,7 +10,7 @@
     </parent>
     <groupId>pl.hordyjewicz</groupId>
     <artifactId>stuff-give-away</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <packaging>war</packaging>
     <name>stuff-give-away</name>
     <description>Projekt &quot;Oddam w dobre ręce&quot;</description>
