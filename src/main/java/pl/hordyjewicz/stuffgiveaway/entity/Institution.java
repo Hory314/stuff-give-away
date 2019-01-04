@@ -22,4 +22,13 @@ public class Institution
 
     @ManyToMany
     private List<Stuff> stuffs;
+
+    @ManyToMany
+    private List<HelpTo> helpTos;
+
+    @OneToMany(mappedBy = "institution", fetch = FetchType.EAGER)
+    private List<GiveAway> giveAways;
+
+    @Column(name = "is_verified", columnDefinition = "BIT(1) DEFAULT FALSE")
+    private Boolean isVerified = false;
 }

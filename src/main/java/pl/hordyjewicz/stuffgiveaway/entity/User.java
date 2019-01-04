@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -32,4 +33,11 @@ public class User
 
     @Column(name = "is_admin", columnDefinition = "BIT(1) DEFAULT FALSE")
     private Boolean isAdmin = false;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<GiveAway> giveAways;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id")
+    private Address address;
 }
