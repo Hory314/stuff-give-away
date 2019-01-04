@@ -6,20 +6,16 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "institutions")
+@Table(name = "stuffs")
 @Data
-public class Institution
+public class Stuff
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String purpose;
+    private String stuff;
 
-    private String name;
-
-    private String city;
-
-    @ManyToMany
-    private List<Stuff> stuffs;
+    @ManyToMany(mappedBy = "stuffs", fetch = FetchType.EAGER)
+    private List<Institution> institutions;
 }
