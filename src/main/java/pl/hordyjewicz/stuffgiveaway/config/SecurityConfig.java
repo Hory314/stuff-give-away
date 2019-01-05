@@ -38,6 +38,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/images/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+                .antMatchers("/giveaway/**").permitAll() // delete after testing
                 .anyRequest().authenticated()
 
                 .and()
@@ -46,6 +50,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 
                 .and()
                 .httpBasic();
+
+        http.csrf().disable();
+
 
 
 
